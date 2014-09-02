@@ -1,8 +1,10 @@
-﻿using System;
+﻿using SoaringHigh.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+
 
 namespace SoaringHigh.Controllers
 {
@@ -10,17 +12,54 @@ namespace SoaringHigh.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+            List<ImageModel> imageList = new List<ImageModel>();
 
-            return View();
+            imageList.Add(new ImageModel { ImageID = 1, ImageName = "Image 1", ImagePath = "http://www.mindblowingworld.com/wp-content/uploads/2014/03/Photos-of-Extraordinary-Hot-Air-Balloons-8.jpg" });
+
+            //imageList.Add(new ImageModel { ImageID = 1, ImageName = "Image 1", ImagePath = "/img/sky-full-colorful-hot-air-balloons_315169.jpg" });
+            imageList.Add(new ImageModel { ImageID = 2, ImageName = "Image 2", ImagePath = "/img/hotairballoonmountain.jpg" });
+            imageList.Add(new ImageModel { ImageID = 3, ImageName = "Image 3", ImagePath = "/img/hotairballoonlaketahoe.jpg" });
+            imageList.Add(new ImageModel { ImageID = 4, ImageName = "Image 4", ImagePath = "/img/hotairballoonreflection.jpg" });
+            imageList.Add(new ImageModel { ImageID = 5, ImageName = "Image 5", ImagePath = "/img/hotairballoon_animals.jpg" });
+
+            return View(imageList);
         }
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your app description page.";
+            ViewBag.Message = "Soaring High.";
 
             return View();
         }
+
+        public ActionResult History()
+        {
+            ViewBag.Message = "History.";
+
+            return View();
+        }
+
+        public ActionResult Events()
+        {
+            ViewBag.Message = "Events.";
+
+            return View();
+        }
+
+        public ActionResult Rides()
+        {
+            ViewBag.Message = "Ride Vendors.";
+
+            return View();
+        }
+
+        public ActionResult LaunchCriteria()
+        {
+            ViewBag.Message = "LaunchCriteria.";
+
+            return View();
+        }
+
 
         public ActionResult Contact()
         {
@@ -28,5 +67,6 @@ namespace SoaringHigh.Controllers
 
             return View();
         }
+
     }
 }
